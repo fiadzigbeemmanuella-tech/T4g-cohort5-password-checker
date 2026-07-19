@@ -39,41 +39,49 @@ def rate_password(score):
         return "Fair"
     else:
         return"strong"
-#
 def main():
+
     while True:
+
         password = input("\nEnter a password (or type 'quit' to exit): ")
+
         if password.lower() == "quit":
             print("Goodbye")
             break
+
         score = 0
+
         
         if check_length(password):
             print("YES - Password is at least 8 characters long.")
             score += 1
         else:
             print("NO - Password must be at least 8 characters long.")
+
        
         if check_uppercase(password):
             print("YES - Contains an uppercase letter.")
             score += 1
         else:
             print("NO - Missing an uppercase letter.")
+
        
         if check_number(password):
             print("YES - Contains a number.")
             score += 1
         else:
             print("NO - Missing a number.")
+
         
         if check_special(password):
             print("YES - Contains a special character.")
             score += 1
         else:
-            print("NO - Missing a special character.")
+            print("NO -Missing a special character.")
+
        
         print("Password Strength:", rate_password(score))
 
-if __name__ == "__main__":
-    main() 
-    
+
+main()
+
